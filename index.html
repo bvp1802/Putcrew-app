@@ -36,11 +36,11 @@ button {
 
 .opwarming { background: #287233; }
 .balbezit { background: #287233; }
-.scoren { background: #f287233; }
+.scoren { background: #287233; }
 .promotie { background: #287233; }
 .titel { background: #287233; }
 
-.kaart {
+..kaart {
   margin: 30px 20px;
   padding: 30px;
   background: white;
@@ -51,7 +51,27 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s ease;
+
+  transform-style: preserve-3d;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.kaart:hover {
+  transform: rotateX(6deg) rotateY(-6deg) scale(1.03);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+}
+
+/* flip animatie */
+.flip {
+  animation: flipCard 0.6s ease;
+}
+
+@keyframes flipCard {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(90deg); }
+  100% { transform: rotateY(0deg); }
+}
 }
 </style>
 </head><link rel="manifest" href="manifest.json">
@@ -420,4 +440,5 @@ function toon(zone) {
 
 </body>
 </html>
+
 
