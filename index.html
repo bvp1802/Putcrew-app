@@ -83,7 +83,22 @@ if ('serviceWorker' in navigator) {
     .then(() => console.log('Service Worker geregistreerd'))
     .catch(err => console.log('Service Worker fout:', err));
 }
+
+/* kaart flip functie */
+function toonKaart(tekst) {
+  const kaart = document.querySelector('.kaart');
+  kaart.classList.add('flip');
+
+  setTimeout(() => {
+    kaart.innerText = tekst;
+  }, 300);
+
+  setTimeout(() => {
+    kaart.classList.remove('flip');
+  }, 600);
+}
 </script>
+
 
 <h1>In welke zone bevind je je?</h1>
 
@@ -440,5 +455,6 @@ function toon(zone) {
 
 </body>
 </html>
+
 
 
